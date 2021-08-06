@@ -24,7 +24,7 @@ app.post("/repositories", (request, response) => {
     techs,
     likes: 0
   } 
-  
+    
   repositories.push(repositorie);
 
   return response.json(repositorie);
@@ -40,12 +40,12 @@ app.put("/repositories/:id", (request, response) => {
     return response.status(400).json({ erro: "Repositorie not found."})
   }
 
-  const repositorie = { 
+  const repositorie = {  
     id,
     title,
     url,
     techs,
-    likes: 1
+    likes: repositories[repositorieIndex].likes
   }
 
   repositories[repositorieIndex] = repositorie;
